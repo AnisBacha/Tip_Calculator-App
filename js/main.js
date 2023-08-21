@@ -1,4 +1,4 @@
-
+const button = document.querySelector(".main__btn");
 const inputs = document.querySelectorAll(".main__radio");
 const labels = document.querySelectorAll(".main__label");
 const customInput = document.querySelector(".main__custom");
@@ -16,12 +16,15 @@ customInput.addEventListener("input", (event) =>{
         tipPercentage = customInput.value / 100;
     }
 });
-    
+
 document.querySelector(".main__form").addEventListener("click", (event) =>{
     changeBgColor();
     checkNumberOfPeople();
     calculatePrice();
 })
+button.addEventListener("click" , (event) => {
+    resetValues();
+});
 
 
 
@@ -81,7 +84,7 @@ const checkNumberOfPeople = () =>{
 
 const calculatePrice = () =>{
 
-    if(bill.value !=="" && numberOfPeople.value !==""){
+    if(bill.value && numberOfPeople.value && Number(numberOfPeople.value)!==0 && !isNaN(tipPercentage)){
         const billFormat = /^(0|[1-9]\d*)(\.\d+)?$/;
         const peopleFormat = /^([1-9]\d*)$/;
         if(billFormat.test(bill.value) && peopleFormat.test(numberOfPeople.value)){
@@ -94,3 +97,15 @@ const calculatePrice = () =>{
     } 
 };
 
+const resetValues = () => {
+    bill.value = 0;
+    numberOfPeople.value = 0;
+    tipPercentage = 0;
+    tipAmount.textContent = Number("0").toFixed(2);
+    total.textContent = Number("0").toFixed(2);
+
+    for(let i =0; i<5; i++){
+        inputs[i].checked  = false; 
+        labels[i].style.backgroundColor = "hsl(183, 100%, 15%)";
+    }
+};
