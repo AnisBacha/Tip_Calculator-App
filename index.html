@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Tip calculator app</title>
+
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/main.js"></script>
+</head>
+
+<body>
+  <header class="header">
+    <img src="images/logo.svg" alt="LOGO" class="header__logo">
+  </header>
+  <main class="main">
+    <form class="main__form">
+      <fieldset class="main__inputuser">
+        <h1 class="main__h1">Bill</h1>
+        <section class="main__bill">
+          <input type="number" name="bill" min="0" id="bill" placeholder="0" class="main__input">
+          <img src="images/icon-dollar.svg" alt="Dollar Sign" class="main__dollarsign">
+        </section>
+        <p class="main__p">Select Tip %</p>
+        <section class="main__tip">
+          <input type="radio" name="tipAmount" id="5" value="0.05" class="main__radio">
+          <label for="5" class="main__label">5%</label>
+
+          <input type="radio" name="tipAmount" id="10" value="0.1" class="main__radio">
+          <label for="10" class="main__label">10%</label>
+
+          <input type="radio" name="tipAmount" id="15" value="0.15" class="main__radio">
+          <label for="15" class="main__label">15%</label>
+
+          <input type="radio" name="tipAmount" id="25" value="0.25" class="main__radio">
+          <label for="25" class="main__label">25%</label>
+
+          <input type="radio" name="tipAmount" id="50" value="0.50" class="main__radio">
+          <label for="50" class="main__label">50%</label>
+
+          <input type="number" name="tipAmount" id="custom" class="main__custom" placeholder="Custom">
+        </section>
+
+        <section class="main__bill">
+          <p class="main__p">Number of People</p>
+          <p class="main__error">Can't be zero</p>
+          <input type="number" name="people" min="0" id="people" placeholder="0" class="main__input">
+          <img src="images/icon-person.svg" alt="Person" class="main__person">
+
+        </section>
+      </fieldset>
+
+      <section class="main__pricecard">
+        <h2 class="main__h2">Tip Amount<br><span class="main__span">/ person</span></h2>
+        <p class="main__price"><span class="main__tipAmount">$0.00</span></p>
+        <h2 class="main__h2">Total<br><span class="main__span">/ person</span></h2>
+        <p class="main__price"><span class="main__total">$0.00</span></p>
+
+        <button type="reset" class="main__btn">RESET</button>
+      </section>
+
+    </form>
+
+  </main>
+
+
+  <!--<footer>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="#">Anis Bacha</a>.
+    </div>
+  </footer>-->
+
+</body>
+
+</html>
